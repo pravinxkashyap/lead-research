@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lead Research Automation — Test Forms</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0f1622;
+      --bg-card: #ffffff;
+      --text: #0e1726;
+      --muted: #5b6878;
+      --border: #e3e7ee;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 50% -10%, #1a2740 0%, #0f1622 60%);
+      min-height: 100vh;
+      color: #e8eef9;
+      padding: 48px 24px;
+    }
+    .wrap { max-width: 1100px; margin: 0 auto; }
+    header { text-align: center; margin-bottom: 40px; }
+    header .tag {
+      display: inline-block;
+      font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+      background: rgba(255,255,255,0.08); color: #c5d2e6;
+      padding: 6px 12px; border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.10);
+      margin-bottom: 16px; text-transform: uppercase;
+    }
+    header h1 { font-size: 36px; font-weight: 800; line-height: 1.2; margin-bottom: 10px; letter-spacing: -0.5px; }
+    header p { color: #97a4ba; font-size: 15px; max-width: 640px; margin: 0 auto; line-height: 1.5; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: 14px;
+      padding: 24px;
+      color: var(--text);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+      border-top: 4px solid var(--accent, #5b6878);
+      display: flex;
+      flex-direction: column;
+      min-height: 230px;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(0,0,0,0.22); }
+
+    .card .src {
+      font-size: 10px; font-weight: 800; letter-spacing: 1.4px;
+      color: var(--accent); text-transform: uppercase; margin-bottom: 8px;
+    }
+    .card h3 { font-size: 19px; margin-bottom: 6px; color: #0e1726; }
+    .card h3 b { color: var(--accent); }
+    .card .desc { font-size: 13px; color: var(--muted); line-height: 1.5; flex: 1; margin-bottom: 16px; }
+    .card .meta { font-size: 11px; color: #98a3b3; margin-bottom: 14px; word-break: break-all; }
+    .card a.cta {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 6px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 16px;
+      font-size: 14px; font-weight: 700;
+      border-radius: 8px;
+      transition: opacity .15s ease;
+    }
+    .card a.cta:hover { opacity: .9; }
+    .card a.cta::after { content: "↗"; font-weight: 400; }
+
+    /* Brand accents */
+    .wds      { --accent: #1f8fe0; }
+    .dairytech{ --accent: #6fbf3b; }
+    .mds      { --accent: #2f7fd1; }
+    .mss      { --accent: #e8623f; }
+    .trakop   { --accent: #f15a22; }
+
+    footer {
+      margin-top: 48px;
+      text-align: center;
+      color: #6b7891;
+      font-size: 12px;
+    }
+    footer code {
+      background: rgba(255,255,255,0.06);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #c5d2e6;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="tag">Internal — Test forms</div>
+      <h1>Lead Research Automation</h1>
+      <p>Pick a brand below to open its lead form. Each form posts to the lead-automation pipeline (validate → ICP score → research → Telegram). Links open in a new tab so you can switch between forms freely.</p>
+    </header>
+
+    <div class="grid">
+      <div class="card wds">
+        <div class="src">wds</div>
+        <h3>Water Delivery <b>Solutions</b></h3>
+        <div class="desc">Bottled water delivery operators — contact person, business name, employees, customers/month, customer type.</div>
+        <div class="meta">pravinxkashyap.github.io/wds_html/</div>
+        <a class="cta" href="https://pravinxkashyap.github.io/wds_html/" target="_blank" rel="noopener noreferrer">Open form</a>
+      </div>
+
+      <div class="card dairytech">
+        <div class="src">dairytech</div>
+        <h3>Dairy<b>Tech.ai</b></h3>
+        <div class="desc">Dairy ERP consult form — name, email, phone, company, business domain (multi-select), requirements.</div>
+        <div class="meta">pravinxkashyap.github.io/dairy_html/</div>
+        <a class="cta" href="https://pravinxkashyap.github.io/dairy_html/" target="_blank" rel="noopener noreferrer">Open form</a>
+      </div>
+
+      <div class="card mds">
+        <div class="src">mds</div>
+        <h3>Milk Delivery <b>Solutions</b></h3>
+        <div class="desc">Milk subscription delivery — name, email, mobile, business, customers, litres/day, orders/day, delivery staff.</div>
+        <div class="meta">pravinxkashyap.github.io/mds_html/</div>
+        <a class="cta" href="https://pravinxkashyap.github.io/mds_html/" target="_blank" rel="noopener noreferrer">Open form</a>
+      </div>
+
+      <div class="card mss">
+        <div class="src">mss</div>
+        <h3>Master <b>Software Solutions</b></h3>
+        <div class="desc">General IT / ERP / AI services contact form — name, email, phone, business name, message.</div>
+        <div class="meta">pravinxkashyap.github.io/mss_html/</div>
+        <a class="cta" href="https://pravinxkashyap.github.io/mss_html/" target="_blank" rel="noopener noreferrer">Open form</a>
+      </div>
+
+      <div class="card trakop">
+        <div class="src">trakop</div>
+        <h3>Trak<b>op</b></h3>
+        <div class="desc">Delivery management demo — first/last name, email, business type, company, phone, requirements, orders/customers.</div>
+        <div class="meta">pravinxkashyap.github.io/trakop_html/</div>
+        <a class="cta" href="https://pravinxkashyap.github.io/trakop_html/" target="_blank" rel="noopener noreferrer">Open form</a>
+      </div>
+    </div>
+
+    <footer>
+      All forms POST to <code>https://lead-automation.staging02.com/submit</code> · Source detection by hidden <code>source</code> field with field-signature fallback.
+    </footer>
+  </div>
+</body>
+</html>
